@@ -7,7 +7,7 @@ import {
   Components
 } from 'exponent';
 
-export default class FacebookButton extends React.Component {
+export default class Button extends React.Component {
   render() {
     return (
       <Components.LinearGradient

@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
-import FacebookButton from '../components/Button';
+import Button from '../components/Button';
 
 export default class HomeScreen extends React.Component {
   static route = {
