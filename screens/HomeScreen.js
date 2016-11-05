@@ -10,6 +10,8 @@ import {
   View,
 } from 'react-native';
 
+import Colors from '../constants/Colors';
+
 import { MonoText } from '../components/StyledText';
 import Button from '../components/Button';
 
@@ -32,18 +34,6 @@ export default class HomeScreen extends React.Component {
       </View>
     );
   }
-
-  _handleHelpPress = async () => {
-
-    try {
-      let result = await fetch('http://gozcxnvjzxcjhkvznxckjvjkzcxvx.com');
-      let data = await result.text();
-      alert(JSON.stringify(result));
-    } catch(e) {
-      alert(e.message);
-    }
-  }
-}
 
 const styles = StyleSheet.create({
   container: {
