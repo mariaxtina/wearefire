@@ -27,7 +27,7 @@ export default class HomeScreen extends React.Component {
           style={styles.container}
           contentContainerStyle={styles.contentContainer}>
 
-          <FacebookButton />
+          <Button />
 
         </ScrollView>
       </View>
