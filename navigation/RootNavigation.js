@@ -22,7 +22,6 @@ import registerForPushNotificationsAsync from '../api/registerForPushNotificatio
 
 export default class RootNavigation extends React.Component {
   componentDidMount() {
-
   }
 
   componentWillUnmount() {
