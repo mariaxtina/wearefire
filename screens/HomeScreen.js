@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
+import FacebookButton from '../components/Button';
 
 export default class HomeScreen extends React.Component {
   static route = {
@@ -26,11 +27,7 @@ export default class HomeScreen extends React.Component {
           style={styles.container}
           contentContainerStyle={styles.contentContainer}>
 
-          <View style={styles.getStartedContainer}>
-            <Text style={styles.getStartedText}>
-              Lets put the button here.
-            </Text>
-          </View>
+          <FacebookButton />
 
         </ScrollView>
       </View>
