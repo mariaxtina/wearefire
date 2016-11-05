@@ -1,4 +1,7 @@
-import Exponent from 'exponent';
+import Exponent, {
+  Permissions,
+  Location,
+} from 'exponent';
 import React from 'react';
 import {
   AppRegistry,
@@ -18,6 +21,8 @@ import {
 import Router from './navigation/Router';
 import cacheAssetsAsync from './utilities/cacheAssetsAsync';
 
+// import { sendSms } from './api/TwilioApi';
+
 class AppContainer extends React.Component {
   state = {
     appIsReady: false,
@@ -25,6 +30,16 @@ class AppContainer extends React.Component {
 
   componentWillMount() {
     this._loadAssetsAsync();
+    this._findLocation();
+  }
+
+  _findLocation = async () => {
+    const { status } = await Permissions.askAsync(Permissions.LOCATION);
+    if (status === 'granted') {
+      return;
+    } else {
+      alert('We need your location to send an SOS!')
+    }
   }
 
   async _loadAssetsAsync() {
@@ -46,8 +61,7 @@ class AppContainer extends React.Component {
 
   render() {
     if (this.state.appIsReady) {
-      let { notification } = this.props.exp;
-      let initialRoute = Router.getRoute('rootNavigation', {notification});
+      let initialRoute = Router.getRoute('home');
 
       return (
         <View style={styles.container}>

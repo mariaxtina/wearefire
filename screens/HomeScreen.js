@@ -18,7 +18,7 @@ import Button from '../components/Button';
 export default class HomeScreen extends React.Component {
   static route = {
     navigationBar: {
-      visible: false,
+      title: 'Some title here',
     },
   }
 
@@ -27,19 +27,16 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView
           contentContainerStyle={styles.contentContainer}>
-
           <Button />
-
         </ScrollView>
       </View>
     );
   }
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: '#fff',
   },
   developmentModeText: {
@@ -49,7 +46,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   contentContainer: {
-    paddingTop: 80,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
   },
   welcomeContainer: {
     alignItems: 'center',
