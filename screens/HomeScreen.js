@@ -24,7 +24,6 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView
-          style={styles.container}
           contentContainerStyle={styles.contentContainer}>
 
           <Button />
@@ -50,7 +49,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
     backgroundColor: '#fff',
   },
   developmentModeText: {
