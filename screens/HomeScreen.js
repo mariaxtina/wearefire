@@ -10,9 +10,12 @@ import {
   View,
 } from 'react-native';
 
+import Exponent, { Components } from 'exponent';
+
 import { MonoText } from '../components/StyledText';
 import Button from '../components/Button';
 import Fire from '../components/Fire';
+import Bacon from '../components/Bacon';
 
 export default class HomeScreen extends React.Component {
   static route = {
@@ -34,8 +37,25 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView
           contentContainerStyle={styles.contentContainer}>
+          <Bacon active={this.state.active} />
           <Button onPress={this._toggleActive} />
           <Fire active={this.state.active} />
+          <Components.Video
+            source={require('../assets/fireplace.mp3')}
+            rate={1.0}
+            volume={.8}
+            muted={!this.state.active}
+            repeat
+            style={{ width: 0, height: 0}}
+          />
+          <Components.Video
+            source={require('../assets/bacon.mp3')}
+            rate={1.0}
+            volume={1.0}
+            muted={!this.state.active}
+            repeat
+            style={{ width: 0, height: 0}}
+          />
         </ScrollView>
       </View>
     );

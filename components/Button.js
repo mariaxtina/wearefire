@@ -40,25 +40,25 @@ export default class Button extends React.Component {
     // }
 
     // Make POST to send a text
-    try {
-      let { coords } = await Location.getCurrentPositionAsync({
-        enableHighAccuracy: true,
-      });
+  //   try {
+  //     let { coords } = await Location.getCurrentPositionAsync({
+  //       enableHighAccuracy: true,
+  //     });
 
-      let gMapURL = 'http://maps.google.com/maps?z=12&t=m&q=loc:' + coords.latitude + '+' + coords.longitude;
-      let result = await fetch('https://fathomless-woodland-98674.herokuapp.com/', {
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        method: "POST",
-        body: JSON.stringify({
-          phoneNumber: Environment.TEXT_NUM,
-          message: 'Join me for bacon! ' + gMapURL
-        })
-      });
+  //     let gMapURL = 'http://maps.google.com/maps?z=12&t=m&q=loc:' + coords.latitude + '+' + coords.longitude;
+  //     let result = await fetch('https://fathomless-woodland-98674.herokuapp.com/', {
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       method: "POST",
+  //       body: JSON.stringify({
+  //         phoneNumber: Environment.TEXT_NUM,
+  //         message: 'Join me for bacon! ' + gMapURL
+  //       })
+  //     });
 
-    } catch(e) {
-      alert(e.message);
-    }
+  //   } catch(e) {
+  //     alert(e.message);
+  //   }
   }
 }
