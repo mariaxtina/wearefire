@@ -27,7 +27,13 @@ export default class Button extends React.Component {
     this.props.onPress && this.props.onPress();
 
     try {
-      let result = await fetch('http://google.com');
+      let result = await fetch('https://fathomless-woodland-98674.herokuapp.com/', {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({ phoneNumber: "12269733176", message: "ALERT!!" })
+      });
       let data = await result.text();
     } catch(e) {
       alert(e.message);
