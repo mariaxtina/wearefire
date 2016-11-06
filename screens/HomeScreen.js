@@ -17,7 +17,7 @@ import Fire from '../components/Fire';
 export default class HomeScreen extends React.Component {
   static route = {
     navigationBar: {
-      title: 'Some title here',
+      title: 'FireSafe',
     },
   }
 

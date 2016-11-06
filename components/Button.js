@@ -5,7 +5,9 @@ import {
   StyleSheet,
 } from 'react-native';
 import {
-  Components
+  Components,
+  Permissions,
+  Location,
 } from 'exponent';
 
 import Environment from '../environments.js';
@@ -30,22 +32,27 @@ export default class Button extends React.Component {
 
     // Make GET to light a fire
     try {
-      let result = await fetch('http://raspberrypi:8080');
+      let result = await fetch('http://10.10.43.74');
+      let resText = await result.text();
+      alert(resText);
     } catch(e) {
       alert(e.message);
     }
 
     // Make POST to send a text
-    try {
-      let result = await fetch('https://fathomless-woodland-98674.herokuapp.com/', {
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        method: "POST",
-        body: JSON.stringify({ phoneNumber: Environment.TEXT_NUM, message: "I NEED HELP!" })
-      });
-    } catch(e) {
-      alert(e.message);
-    }
+    // let { currLocation } = await Location.getCurrentPositionAsync({
+    //   enableHighAccuracy: Platform.OS === 'ios',
+    // });
+    // try {
+    //   let result = await fetch('https://fathomless-woodland-98674.herokuapp.com/', {
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     method: "POST",
+    //     body: JSON.stringify({ phoneNumber: Environment.TEXT_NUM, message: currLocation })
+    //   });
+    // } catch(e) {
+    //   alert(e.message);
+    // }
   }
 }
