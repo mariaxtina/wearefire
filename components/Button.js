@@ -20,7 +20,7 @@ export default class Button extends React.Component {
           colors={['#FFDC01', '#FDAC01', '#F73B01']}
           style={{alignItems: 'center', justifyContent: 'center', width: 200, height: 200, borderRadius: 100}}>
           <Text style={{backgroundColor: 'transparent', fontSize: 30, color: '#fff'}}>
-            FIRE!
+            Fry me!
           </Text>
         </Components.LinearGradient>
       </TouchableOpacity>
