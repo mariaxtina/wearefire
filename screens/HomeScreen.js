@@ -10,8 +10,6 @@ import {
   View,
 } from 'react-native';
 
-import Colors from '../constants/Colors';
-
 import { MonoText } from '../components/StyledText';
 import Button from '../components/Button';
 import Fire from '../components/Fire';

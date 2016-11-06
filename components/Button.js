@@ -8,6 +8,8 @@ import {
   Components
 } from 'exponent';
 
+import Environment from '../environments.js';
+
 export default class Button extends React.Component {
   render() {
     return (
@@ -26,15 +28,22 @@ export default class Button extends React.Component {
   _handleHelpPress = async () => {
     this.props.onPress && this.props.onPress();
 
+    // Make GET to light a fire
+    try {
+      let result = await fetch('http://raspberrypi:8080');
+    } catch(e) {
+      alert(e.message);
+    }
+
+    // Make POST to send a text
     try {
       let result = await fetch('https://fathomless-woodland-98674.herokuapp.com/', {
         headers: {
           'Content-Type': 'application/json'
         },
         method: "POST",
-        body: JSON.stringify({ phoneNumber: "12269733176", message: "ALERT!!" })
+        body: JSON.stringify({ phoneNumber: Environment.TEXT_NUM, message: "I NEED HELP!" })
       });
-      let data = await result.text();
     } catch(e) {
       alert(e.message);
     }
