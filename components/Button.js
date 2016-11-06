@@ -8,9 +8,6 @@ import {
   Components
 } from 'exponent';
 
-import Sound from 'react-native-sound';
-
-
 export default class Button extends React.Component {
   render() {
     return (
@@ -31,28 +28,9 @@ export default class Button extends React.Component {
 
     try {
       let result = await fetch('http://google.com');
-      let sound = await whoosh.play();
       let data = await result.text();
     } catch(e) {
       alert(e.message);
     }
   }
-
-  var whoosh = new Sound('whoosh.mp3', Sound.MAIN_BUNDLE, (error) => {
-    if (error) {
-      console.log('failed to load the sound', error);
-    } else { // loaded successfully
-      console.log('duration in seconds: ' + whoosh.getDuration() +
-          'number of channels: ' + whoosh.getNumberOfChannels());
-    }
-  });
-
-whoosh.play((success) => {
-  if (success) {
-    console.log('successfully finished playing');
-  } else {
-    console.log('playback failed due to audio decoding errors');
-  }
-});
-
 }
