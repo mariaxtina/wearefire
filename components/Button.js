@@ -24,10 +24,11 @@ export default class Button extends React.Component {
   }
 
   _handleHelpPress = async () => {
+    this.props.onPress && this.props.onPress();
+
     try {
       let result = await fetch('http://google.com');
       let data = await result.text();
-      alert(JSON.stringify(result));
     } catch(e) {
       alert(e.message);
     }

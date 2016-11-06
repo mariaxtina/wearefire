@@ -23,12 +23,21 @@ export default class HomeScreen extends React.Component {
     },
   }
 
+  state = {
+    active: false,
+  }
+
+  _toggleActive = () => {
+    this.setState({active: !this.state.active});
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <ScrollView
           contentContainerStyle={styles.contentContainer}>
-          <Fire/>
+          <Button onPress={this._toggleActive} />
+          <Fire active={this.state.active} />
         </ScrollView>
       </View>
     );
@@ -38,7 +47,7 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
   },
   developmentModeText: {
     marginBottom: 20,
