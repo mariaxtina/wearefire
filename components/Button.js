@@ -5,8 +5,12 @@ import {
   StyleSheet,
 } from 'react-native';
 import {
-  Components
+  Components,
+  Permissions,
+  Location,
 } from 'exponent';
+
+import Environment from '../environments.js';
 
 export default class Button extends React.Component {
   render() {
@@ -26,9 +30,33 @@ export default class Button extends React.Component {
   _handleHelpPress = async () => {
     this.props.onPress && this.props.onPress();
 
+    // Make GET to light a fire
+    // try {
+    //   let result = await fetch('http://10.10.43.74');
+    //   let resText = await result.text();
+    //   // alert(resText);
+    // } catch(e) {
+    //   alert(e.message);
+    // }
+
+    // Make POST to send a text
     try {
-      let result = await fetch('http://google.com');
-      let data = await result.text();
+      let { coords } = await Location.getCurrentPositionAsync({
+        enableHighAccuracy: true,
+      });
+
+      let gMapURL = 'http://maps.google.com/maps?z=12&t=m&q=loc:' + coords.latitude + '+' + coords.longitude;
+      let result = await fetch('https://fathomless-woodland-98674.herokuapp.com/', {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({
+          phoneNumber: Environment.TEXT_NUM,
+          message: 'Join me for bacon! ' + gMapURL
+        })
+      });
+
     } catch(e) {
       alert(e.message);
     }

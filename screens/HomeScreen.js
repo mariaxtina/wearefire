@@ -10,8 +10,6 @@ import {
   View,
 } from 'react-native';
 
-import Colors from '../constants/Colors';
-
 import { MonoText } from '../components/StyledText';
 import Button from '../components/Button';
 import Fire from '../components/Fire';
@@ -19,7 +17,7 @@ import Fire from '../components/Fire';
 export default class HomeScreen extends React.Component {
   static route = {
     navigationBar: {
-      title: 'Some title here',
+      title: 'FireSafe',
     },
   }
 
