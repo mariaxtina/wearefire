@@ -14,6 +14,7 @@ import Colors from '../constants/Colors';
 
 import { MonoText } from '../components/StyledText';
 import Button from '../components/Button';
+import Fire from '../components/Fire';
 
 export default class HomeScreen extends React.Component {
   static route = {
@@ -27,7 +28,7 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView
           contentContainerStyle={styles.contentContainer}>
-          <Button />
+          <Fire/>
         </ScrollView>
       </View>
     );
