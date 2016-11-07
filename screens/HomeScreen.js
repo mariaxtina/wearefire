@@ -20,7 +20,7 @@ import Bacon from '../components/Bacon';
 export default class HomeScreen extends React.Component {
   static route = {
     navigationBar: {
-      title: 'FireSafe',
+      title: 'The Bacon Machine',
     },
   }
 

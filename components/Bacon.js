@@ -168,7 +168,6 @@ export default class Bacon extends React.Component {
 
 const styles = StyleSheet.create({
   bacon1: {
-    boxShadow: inset rgba(black, 0.2) 0 0 40,
     borderRadius: 10,
     backgroundColor: '#BE4A02',
     width: 160,
@@ -178,7 +177,6 @@ const styles = StyleSheet.create({
     // left: 110,
   },
   bacon2: {
-    boxShadow: inset rgba(black, 0.2) 0 0 40,
     borderRadius: 10,
     backgroundColor: '#BE4A02',
     width: 160,
@@ -188,7 +186,6 @@ const styles = StyleSheet.create({
     right: 50,
   },
   bacon3: {
-    boxShadow: inset rgba(black, 0.2) 0 0 40,
     borderRadius: 10,
     backgroundColor: '#BE4A02',
     width: 160,
@@ -198,7 +195,6 @@ const styles = StyleSheet.create({
     left: 50,
   },
   bacon4: {
-    boxShadow: inset rgba(black, 0.2) 0 0 40,
     borderRadius: 10,
     backgroundColor: '#BE4A02',
     width: 160,
